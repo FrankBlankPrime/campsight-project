@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="Campsight" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+    <!-- End Favicon -->
+    <title>Campsight</title>
+    <meta
+      name="description"
+      content="Search for your next outdoor adventure."
+    />
+    <meta name="keywords" content="camping, outdoors, recreation" />
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="/"
+          ><img src="/assets/logo.svg" alt="Campsight" class="logotype-mark"
+        /></a>
+      </div>
+    </header>
+    <main>
+      <section id="campsites-view-page">
+        <section id="homepage-hero">
+          <div class="container hero">
+            <h1>Wake up somewhere wild.</h1>
+            <p>
+              Handpicked locations with amazing views, perfect amenities, and
+              stellar reviews.
+            </p>
+          </div>
+        </section>
+        <div class="container campsites-view">
+          <div class="sidebar-grid">
+            <aside id="filters">
+              <form action="" name="filters" id="filter-form">
+                <div class="flex-row-space-between filters-title">
+                  <h2>Filters</h2>
+                  <button type="reset">Reset</button>
+                </div>
+                <div class="input-group">
+                  <label class="filter-label">Location</label>
+                  <select id="location" name="location">
+                    <option value="" disabled selected>Select an option</option>
+                  </select>
+                </div>
+                <div class="input-group">
+                  <label class="filter-label"
+                    >Price / Night: Up to
+                    <span id="price-per-night">$300</span></label
+                  >
+                  <input
+                    type="range"
+                    id="price"
+                    name="price"
+                    list="price-ranges"
+                    min="50"
+                    max="300"
+                    value="200"
+                    step="50"
+                  />
+                  <datalist id="price-ranges">
+                    <option value="50"></option>
+                    <option value="75"></option>
+                    <option value="100"></option>
+                    <option value="200"></option>
+                    <option value="300"></option>
+                  </datalist>
+                </div>
+                <fieldset class="input-group">
+                  <legend class="filter-label">Min rating</legend>
+                  <div class="radio-group">
+                    <input
+                      type="radio"
+                      name="rating"
+                      id="any"
+                      value="any"
+                      checked
+                    />
+                    <label for="any">Any</label>
+                  </div>
+                  <div class="radio-group">
+                    <input
+                      type="radio"
+                      name="rating"
+                      id="3-star"
+                      value="3-star"
+                    />
+                    <label for="3-star">3★</label>
+                  </div>
+                  <div class="radio-group">
+                    <input
+                      type="radio"
+                      name="rating"
+                      id="3-5-star"
+                      value="3-5-star"
+                    />
+                    <label for="3-5-star">3.5★</label>
+                  </div>
+                  <div class="radio-group">
+                    <input
+                      type="radio"
+                      name="rating"
+                      id="4-star"
+                      value="4-star"
+                    />
+                    <label for="4-star">4★</label>
+                  </div>
+                  <div class="radio-group">
+                    <input
+                      type="radio"
+                      name="rating"
+                      id="4-5-star"
+                      value="4-5-star"
+                    />
+                    <label for="4-5-star">4.5★</label>
+                  </div>
+                  <div class="radio-group">
+                    <input
+                      type="radio"
+                      name="rating"
+                      id="5-star"
+                      value="5-star"
+                    />
+                    <label for="5-star">5★</label>
+                  </div>
+                </fieldset>
+                <div class="input-group">
+                  <label class="filter-label">Min guests</label>
+                  <select id="occupancy" name="occupancy">
+                    <option value="0" selected>Any</option>
+                    <option value="2">2+</option>
+                    <option value="4">4+</option>
+                    <option value="6">6+</option>
+                    <option value="8">8+</option>
+                    <option value="10">10+</option>
+                  </select>
+                </div>
+                <fieldset class="input-group amenities-checkboxes">
+                  <legend class="filter-label">Amenities</legend>
+                </fieldset>
+              </form>
+            </aside>
+            <div id="results-container">
+              <div class="results-header">
+                <p id="results-count">Showing all campsites</p>
+                <div class="input-group sort-group">
+                  <label for="sort">Sort by:</label>
+                  <select id="sort" name="sort">
+                    <option value="featured">Featured</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Highest Rated</option>
+                  </select>
+                </div>
+              </div>
+              <div class="cards-grid">
+                <a href="#" class="campsite-card-link">
+                  <div class="campsite-card">
+                    <div id="campsite-image">
+                      <div class="floating-ui">
+                        <div class="amenity-tags">
+                          <div class="amenity-tag">🐾 Pet friendly</div>
+                        </div>
+                        <button id="save-button" aria-label="Save campsite">
+                          <img
+                            src="/assets/icons/heart-outline.svg"
+                            alt="save"
+                          />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="campsite-details">
+                    <div class="flex-row-space-between">
+                      <h2 class="campsite-name">Campsite Name</h2>
+                      <p class="campsite-rating">★5</p>
+                    </div>
+                    <p class="campsite-location">Pacific Northwest, Oregon</p>
+                    <div class="campsite-price">
+                      <span id="campsite-nightly-price">$73</span> / night
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End of Campsites View page -->
+      <!-- Campsite listing page -->
+      <section id="campsite-detail-page" class="hidden">
+        <button id="back-to-list" aria-label="Back to campsite list">
+          ← Back to all campsites
+        </button>
+        <div class="campsite-title">
+          <!-- Title content will be populated by JavaScript -->
+        </div>
+        <div class="campsite-image-carousel">
+          <!-- Carousel will be populated by JavaScript -->
+        </div>
+        <div class="campsite-details">
+          <div class="detail-grid">
+            <article class="campsite-details-article">
+              <!-- Detail sections will be populated by JavaScript -->
+            </article>
+            <aside class="book-now-form">
+              <!-- Booking form will be populated by JavaScript -->
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="flex-row-space-between">
+        <div>
+          <img
+            src="/assets/logo-secondary.svg"
+            alt="campsite"
+            id="logo-mark-greyscale"
+          />
+          <nav>
+            <a href="#">All campsites</a><a href="#">Sites by Amenity</a
+            ><a href="#">About</a><a href="#">Contact Us</a>
+          </nav>
+        </div>
+        <p class="copyright">©<span id="current-year"></span> Campsight</p>
+      </div>
+    </footer>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+.cards-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.campsite-card-link{
+  border: 1px solid black;
+}
