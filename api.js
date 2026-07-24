@@ -51,6 +51,7 @@ function getAmenities(sortByPopularity = false, limit = null) {
       amenitiesArray.push(amenity)))
   if (sortByPopularity === false && limit === null) {
     amenitiesArray.map((amenity) => amenitiesSet.add(amenity))
+    /* Alphabetical sorting */
     let sortedAmenities = [...amenitiesSet]
     sortedAmenities.sort()
     return sortedAmenities
